@@ -3,7 +3,7 @@ import requests
 import matplotlib.pyplot as plt 
 from matplotlib.ticker import FuncFormatter
 
-st.set_page_config(layout="centered")
+
 st.title("Population Statestics")
 
 
@@ -18,7 +18,7 @@ def get_country_list():
 def show_chart(selected_countries):  
     colors = ['blue', 'red', 'green', 'orange', 'purple', 'brown', 'pink', 'cyan', 'magenta', 'gray']
     
-    plt.figure(figsize=(20, 12))
+    plt.figure(figsize=(12, 7))
     
     # Loop: ALL countries plotted on SAME figure
     for i, country in enumerate(selected_countries):
