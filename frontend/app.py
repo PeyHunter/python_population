@@ -1,4 +1,19 @@
 import streamlit as st
+from utils.countries import get_country_list
+from pages.population_comparison import show_chart
+
+
+st.title("Population Statistics")
+countries = get_country_list()
+selected = st.multiselect("Select countries:", countries, default=["Japan"])
+if selected:
+    show_chart(selected)
+
+
+
+'''
+
+import streamlit as st
 import requests
 import matplotlib.pyplot as plt 
 from matplotlib.ticker import FuncFormatter
@@ -7,10 +22,7 @@ from matplotlib.ticker import FuncFormatter
 st.title("Population Statestics")
 
 
-def get_country_list():
-    with open("countries.txt", "r") as f:
-        countries = [line.strip() for line in f if line.strip()]
-    return sorted(countries)
+
 
 
 
@@ -56,3 +68,6 @@ selected_countries = st.multiselect(
 
 if selected_countries:
     show_chart(selected_countries)        
+    
+    
+    '''
