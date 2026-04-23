@@ -1,13 +1,13 @@
-services: 			#Hovedsektion som definere forskellige containere
-  backend:			#Navngivning af min API-service
-    build: ./backend		#Byg image ud fra Dockerfile i "backend" mappen
-    ports:			
-      - "8000:8000"		#Map port 8080 på min computer til port 8080 i containeren
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
     environment:
-      - API_KEY=${API_KEY}	#Hent api nøgle fra .env fil
-  frontend:			#Navnen på frontend container
+      - API_KEY=${API_KEY}
+  frontend:
     build: ./frontend
     ports:
-      - "8501:8501"		#Map port 8501 så jeg kan se Streamlit i browseren
+      - "8501:8501"
     depends_on:
-      - backend			#vent med at starte frontend til at backend kører
+      - backend

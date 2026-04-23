@@ -1,0 +1,31 @@
+[project]
+name = "python-population"
+version = "0.1.0"
+description = "Population statistics app with FastAPI and Streamlit"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "requests",
+    "python-dotenv",
+    "streamlit",
+    "matplotlib",
+    "pandas",
+    "numpy",
+    "httpx",
+]
+[dependency-groups]
+dev = [
+    "pytest",
+    "ruff",
+    "pyright",
+]
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+[tool.ruff]
+line-length = 88
+[tool.pyright]
+include = ["backend", "frontend", "tests"]
+venvPath = "."
+venv = ".venv"
